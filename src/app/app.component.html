@@ -14,7 +14,18 @@
       </ol>
     </div>
   </div>
-  <app-game-control></app-game-control>
-  <app-odd [odd]="name"></app-odd>
-  <app-even (evenNumberEvent)="onEvenNumber($event)"></app-even>
+  <app-game-control (evenNumberEvent)="onEvenNumber($event)" (oddNumberEvent)="onOddNumber($event)"></app-game-control>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>Odd</h2>
+      <app-odd *ngFor="let n of odd" [odd]="n"></app-odd>
+    </div>
+    <div class="col-xs-6">
+      <h2>Even</h2>
+      <app-even *ngFor="let n of even" [even]="n"></app-even>
+    </div>
+  </div>
+
+
 </div>
