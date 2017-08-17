@@ -12,4 +12,7 @@ export class EvenComponent implements OnInit {
   ngOnInit() {
   }
 
+  onEvenNumber(number: {n:number}){
+    this.n = number.n;
+  }
 }
